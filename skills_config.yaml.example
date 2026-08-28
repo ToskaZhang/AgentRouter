@@ -1,0 +1,14 @@
+# skills_config.yaml.example - 复制为 skills_config.yaml 并修改
+manual_rules:
+  - name: my-custom-skill
+    description: 我的自定义技能
+    phrases:
+      - phrase: 自定义触发
+        weight: 0.8
+    priority: 12
+
+external_triggers:
+  # 在这里为第三方技能添加触发词，无需修改 SKILL.md
+  # db-migrate:
+  #   - 迁移数据库
+  #   - 改表
