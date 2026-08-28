@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentrouter"
+version = "0.1.0"
+description = "轻量级本地意图识别与技能路由引擎，专为 AI Agent 设计"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "ToskaZhang", email = "your-email@example.com"}
+]
+keywords = ["ai", "agent", "intent-classification", "router", "llm", "skills"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    # 核心库无任何硬依赖，纯标准库
+]
+
+[project.optional-dependencies]
+watchdog = ["watchdog>=2.0.0"]
+yaml = ["pyyaml>=5.0"]
+all = ["agentrouter[watchdog,yaml]"]
+
+[project.urls]
+Homepage = "https://github.com/ToskaZhang/AgentRouter"
+Repository = "https://github.com/ToskaZhang/AgentRouter.git"
+Issues = "https://github.com/ToskaZhang/AgentRouter/issues"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
